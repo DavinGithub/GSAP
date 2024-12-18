@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import { useState, useEffect } from "react";
 import gsap from "gsap";
@@ -18,7 +18,7 @@ export default function HorizontalScrollSection() {
       gsap.to(contents, {
         xPercent: -100 * (contents.length - 1),
         scrollTrigger: {
-          trigger: "#horizontal", 
+          trigger: "#horizontal",
           pin: true,
           scrub: 1,
           snap: 1 / (contents.length - 1),
@@ -26,27 +26,30 @@ export default function HorizontalScrollSection() {
         },
       });
     }
-  }, [isClient]); 
+  }, [isClient]);
 
   if (!isClient) {
-    return null; 
+    return null;
   }
 
   return (
-    <section id="horizontal" className="flex overflow-x-hidden">
-      <div className="content flex-shrink-0 grid place-items-center w-full h-screen text-2xl font-bold tracking-widest uppercase bg-aqua">
+    <section
+      id="horizontal"
+      className="flex overflow-x-hidden h-screen"
+    >
+      <div className="content flex-shrink-0 flex items-center justify-center w-screen h-screen text-xl sm:text-2xl md:text-4xl font-bold tracking-widest uppercase bg-aqua">
         <p>Content 1</p>
       </div>
 
-      <div className="content flex-shrink-0 grid place-items-center w-full h-screen text-2xl font-bold tracking-widest uppercase bg-gray-800">
+      <div className="content flex-shrink-0 flex items-center justify-center w-screen h-screen text-xl sm:text-2xl md:text-4xl font-bold tracking-widest uppercase bg-gray-800 text-white">
         <p>Content 2</p>
       </div>
 
-      <div className="content flex-shrink-0 grid place-items-center w-full h-screen text-2xl font-bold tracking-widest uppercase bg-gray-600">
+      <div className="content flex-shrink-0 flex items-center justify-center w-screen h-screen text-xl sm:text-2xl md:text-4xl font-bold tracking-widest uppercase bg-gray-600 text-white">
         <p>Content 3</p>
       </div>
 
-      <div className="content flex-shrink-0 grid place-items-center w-full h-screen text-2xl font-bold tracking-widest uppercase bg-gray-400">
+      <div className="content flex-shrink-0 flex items-center justify-center w-screen h-screen text-xl sm:text-2xl md:text-4xl font-bold tracking-widest uppercase bg-gray-400 text-white">
         <p>Content 4</p>
       </div>
     </section>
